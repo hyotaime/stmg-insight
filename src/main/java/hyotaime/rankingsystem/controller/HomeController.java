@@ -20,9 +20,9 @@ public class HomeController {
     @GetMapping("/")
     public String home(Model model) {
         // 서비스 계층의 findMembers 메서드를 이용해 전체 랭킹 정보를 가져옴
-        List<Member> members = memberService.findMembers();
-        Collections.sort(members, Comparator.comparing(Member::getCnt).reversed());
-        model.addAttribute("members", members);
+        List<Member> member = memberService.findMembers();
+        Collections.sort(member, Comparator.comparing(Member::getCnt).reversed());
+        model.addAttribute("member", member);
         return "home";
     }
 }

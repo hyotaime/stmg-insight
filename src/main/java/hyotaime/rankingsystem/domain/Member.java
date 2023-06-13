@@ -15,5 +15,7 @@ public class Member {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private String name;
     private Long cnt;
+    private Long recommend;
+    private Long points;
     private Long ranking;
 }

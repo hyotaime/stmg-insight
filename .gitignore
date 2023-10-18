@@ -41,4 +41,9 @@ out/
 
 ### VS Code ###
 .vscode/
-/src/main/java/hyotaime/rankingsystem/sql/sql
+
+### Project ###
+/src/test/
+/src/main/generated/
+/src/main/resources/
+/Dockerfile

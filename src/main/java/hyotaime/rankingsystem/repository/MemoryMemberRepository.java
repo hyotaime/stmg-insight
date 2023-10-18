@@ -16,12 +16,18 @@ public class MemoryMemberRepository implements MemberRepository {
     }
 
     @Override
+    public Optional<Member> findByUid(String uid) {
+        return store.values().stream()
+                .filter(member -> member.getUid().equals(uid))
+                .findAny();
+    }
+
+    @Override
     public List<Member> findAll() {
         return null;
     }
 
     public void clearStore() {
         store.clear();
-
     }
 }

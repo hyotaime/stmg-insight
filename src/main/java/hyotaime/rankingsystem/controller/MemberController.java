@@ -14,13 +14,29 @@ public class MemberController {
 
     private final MemberService memberService;
 
-    @GetMapping("/findmember")
-    public String createForm() {
-        return "findMember";
+    @GetMapping("/findmember/name")
+    public String createFormByName() {
+        return "findMemberByName";
     }
-    @GetMapping("/findmember/{name}")
-    public ModelAndView findMember(@ModelAttribute("name") String name) {
+    @GetMapping("/findmember/uid")
+    public String createFormByUid() {
+        return "findMemberByUid";
+    }
+    @GetMapping("/findmember/name/{name}")
+    public ModelAndView findMemberByName(@ModelAttribute("name") String name) {
         Optional<Member> member = memberService.findByName(name);
+        ModelAndView mav = new ModelAndView();
+        if (member.isPresent()) {
+            mav.addObject("member", member.get());
+            mav.setViewName("memberStat");
+        } else {
+            mav.setViewName("member-not-found");
+        }
+        return mav;
+    }
+    @GetMapping("/findmember/uid/{uid}")
+    public ModelAndView findMemberByUid(@ModelAttribute("uid") String uid) {
+        Optional<Member> member = memberService.findByUid(uid);
         ModelAndView mav = new ModelAndView();
         if (member.isPresent()) {
             mav.addObject("member", member.get());

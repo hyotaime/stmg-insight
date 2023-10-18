@@ -20,4 +20,8 @@ public class MemberService {
     public Optional<Member> findByName(String name) {
         return memberRepository.findByName(name);
     }
+
+    public Optional<Member> findByUid(String uid) {
+        return memberRepository.findByUid(uid);
+    }
 }

@@ -47,3 +47,4 @@ out/
 /src/main/generated/
 /src/main/resources/
 /Dockerfile
+/src/main/java/hyotaime/rankingsystem/repository/MemoryMemberRepository.java

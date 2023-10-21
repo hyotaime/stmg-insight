@@ -11,8 +11,8 @@ import lombok.Setter;
 @Setter
 @Entity
 public class Member {
-
-    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private String uid;
     private String name;
     private Long cnt;

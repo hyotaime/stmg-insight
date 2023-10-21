@@ -7,7 +7,6 @@ import java.util.List;
 import java.util.Optional;
 
 public class JpaMemberRepository implements MemberRepository {
-
     private final EntityManager em;
 
     public JpaMemberRepository(EntityManager em) {
@@ -37,5 +36,4 @@ public class JpaMemberRepository implements MemberRepository {
         return em.createQuery("select m from Member m", Member.class)
                 .getResultList();
     }
-
 }

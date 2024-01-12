@@ -1,2 +1,2 @@
-# MemberRankingSystem
-STMG member ranking system
+# stmg-insight
+STMG Insight
